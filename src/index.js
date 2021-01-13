@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import { MemoryRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './Components/App/App';
 
-const router = <MemoryRouter><App /></MemoryRouter>
+const router = <BrowserRouter><App /></BrowserRouter>
 
 ReactDOM.render(
   router,

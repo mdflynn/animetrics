@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
+import { Link, useParams } from "react-router-dom";
 
 const EpisodeDisplay = () => {
-      //   const [mhaSeasons, setMhaSeasons] = useState([]);
+  //   const [mhaSeasons, setMhaSeasons] = useState([]);
 
   //   useEffect(() => {
   //     getSeasons().then((data) => {
@@ -11,9 +12,19 @@ const EpisodeDisplay = () => {
   //       setMhaSeasons(filteredResults);
   //     });
   //   }, []);
-    return (
-        <h1>Episode Display</h1>
-    )
-}
+  
+  let { number } = useParams();
+
+  console.log(number);
+
+  return (
+    <>
+      <h1>Episode Display</h1>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
+    </>
+  );
+};
 
 export default EpisodeDisplay;

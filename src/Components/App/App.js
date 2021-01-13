@@ -8,8 +8,8 @@ const App = () => {
   return (
     <>
       <Switch>
-        <Route exact path={"/"} render={() => <MainPage />} />
-        <Route exact path={"/:season"} render={() => <EpisodeDisplay />} />
+        <Route exact path="/" render={() => <MainPage />} />
+        <Route path="/:season" component={EpisodeDisplay} />
       </Switch>
     </>
   );
