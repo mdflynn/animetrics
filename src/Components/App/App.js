@@ -1,9 +1,10 @@
 import React from 'react';
+import MainPage from '../MainPage/MainPage';
 import './App.scss';
 
 const App = () => {
   return (
-    <h1>ANIMEtrics</h1>
+    <MainPage />
   )
 }
 
