@@ -5,6 +5,7 @@ div {
 .div-bg {
   margin: 0;
   height: 100%;
+  opacity: 0.8;
   background: url("../../assets/allmight.jpeg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -15,4 +16,5 @@ div {
 p {
   margin: 0;
   color: white;
+  text-align: center;
 }
