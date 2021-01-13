@@ -1,0 +1,46 @@
+div, main {
+  height: 100%;
+  width: 100%;
+}
+
+.div-bg {
+  margin: 0;
+  height: 100%;
+  opacity: 0.8;
+  background: url("../../assets/allmight.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+.season-card {
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px
+}
+
+.link {
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.season-div {
+    display: flex;
+}
