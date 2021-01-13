@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.scss';
 
-function App() {
+const App = () => {
   return (
     <h1>ANIMEtrics</h1>
-  );
+  )
 }
 
 export default App;

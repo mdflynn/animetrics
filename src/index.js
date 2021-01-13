@@ -1,13 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.scss";
-import App from "./App";
-import { MemoryRouter } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.scss';
+import { MemoryRouter } from 'react-router-dom';
+import App from './Components/App/App';
 
-const router = (
-  <MemoryRouter>
-    <App />
-  </MemoryRouter>
+const router = <MemoryRouter><App /></MemoryRouter>
+
+ReactDOM.render(
+  router,
+  document.getElementById('root')
 );
 
-ReactDOM.render(router, document.getElementById("root"));
