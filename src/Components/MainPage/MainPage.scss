@@ -11,7 +11,7 @@ div, main {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  animation: rotateBg 30s infinite;
+  animation: rotateBg 60s infinite;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -51,10 +51,10 @@ ul {
         background: url("../../assets/allmight.jpeg") no-repeat center center fixed;
     }
     10% {
-        background: url("../../assets/battle.jpeg") no-repeat center center fixed;
+        background: url("../../assets/groupshot.jpeg") no-repeat center center fixed;
     }
     20% {
-        background: url("../../assets/allmightRaiseFist.jpeg") no-repeat center center fixed;
+        background: url("../../assets/battle.jpeg") no-repeat center center fixed;
     }
     30% {
         background: url("../../assets/dekuPunk.png") no-repeat center center fixed;
@@ -75,7 +75,7 @@ ul {
         background: url("../../assets/deku.png") no-repeat center center fixed;
     }
     90% {
-        background: url("../../assets/groupshot.jpeg") no-repeat center center fixed;
+        background: url("../../assets/allmightRaiseFist.jpeg") no-repeat center center fixed;
     }
     100% {
         background: url("../../assets/allmight.jpeg") no-repeat center center fixed;
