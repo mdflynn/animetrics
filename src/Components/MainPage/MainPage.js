@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { getSeasons } from "../../APIcalls";
 import { Link } from "react-router-dom";
 
 import "./MainPage.scss";
@@ -7,12 +6,8 @@ import "./MainPage.scss";
 const MainPage = () => {
   return (
     <div className="div-bg">
-      <p className="title">
-        ANIMEtrics
-        <br />
-        For My Hero Academia Fanatics
-      </p>
-      <div className="season-div">
+     <div className="style-div"></div>
+     <div className="season-div">
         <Link className="link" to="/season1">
           <article className="season-card" data-value="season-1">
             Season 1

@@ -7,6 +7,11 @@ import EpisodeDisplay from "../EpisodeDisplay/EpisodeDisplay";
 const App = () => {
   return (
     <>
+     <p className="title">
+        ANIMEtrics
+        <br />
+        For My Hero Academia Fanatics
+      </p>
       <Switch>
         <Route exact path="/" render={() => <MainPage />} />
         <Route path="/:season" component={EpisodeDisplay} />
