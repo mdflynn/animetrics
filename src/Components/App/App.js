@@ -15,7 +15,8 @@ const App = () => {
         </h1>
       </Link>
       <Switch>
-        <Route exact path="/" render={() => <MainPage />} />
+        <Route exact path="/" component={MainPage} />
+        <Route exact path="/animetrics" component={MainPage} />
         <Route path="/:season" component={EpisodeDisplay} />
       </Switch>
     </>
