@@ -7,13 +7,13 @@ main {
 .div-bg {
   margin: 0;
   height: 100%;
-  opacity: 0.8;
-  background: url("../../assets/allmight.jpeg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  animation: rotateBg 60s infinite;
-  background-size: cover;
+  // opacity: 0.8;
+  // background: url("../../assets/allmight.jpeg") no-repeat center center fixed;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // animation: rotateBg 60s infinite;
+  // background-size: cover;
   display: flex;
   flex-direction: column;
 }
@@ -49,40 +49,40 @@ ul {
   flex-wrap: wrap;
 }
 
-@keyframes rotateBg {
-  0% {
-    background: url("../../assets/allmight.jpeg") no-repeat center center fixed;
-  }
-  10% {
-    background: url("../../assets/groupshot.jpeg") no-repeat center center fixed;
-  }
-  20% {
-    background: url("../../assets/battle.jpeg") no-repeat center center fixed;
-  }
-  30% {
-    background: url("../../assets/dekuPunk.png") no-repeat center center fixed;
-  }
-  40% {
-    background: url("../../assets/endeavor.jpeg") no-repeat center center fixed;
-  }
-  50% {
-    background: url("../../assets/group2.jpeg") no-repeat center center fixed;
-  }
-  60% {
-    background: url("../../assets/hug.jpeg") no-repeat center center fixed;
-  }
-  70% {
-    background: url("../../assets/allmightback.jpeg") no-repeat center center
-      fixed;
-  }
-  80% {
-    background: url("../../assets/deku.png") no-repeat center center fixed;
-  }
-  90% {
-    background: url("../../assets/allmightRaiseFist.jpeg") no-repeat center
-      center fixed;
-  }
-  100% {
-    background: url("../../assets/allmight.jpeg") no-repeat center center fixed;
-  }
-}
+// @keyframes rotateBg {
+//   0% {
+//     background: url("../../assets/allmight.jpeg") no-repeat center center fixed;
+//   }
+//   10% {
+//     background: url("../../assets/groupshot.jpeg") no-repeat center center fixed;
+//   }
+//   20% {
+//     background: url("../../assets/battle.jpeg") no-repeat center center fixed;
+//   }
+//   30% {
+//     background: url("../../assets/dekuPunk.png") no-repeat center center fixed;
+//   }
+//   40% {
+//     background: url("../../assets/endeavor.jpeg") no-repeat center center fixed;
+//   }
+//   50% {
+//     background: url("../../assets/group2.jpeg") no-repeat center center fixed;
+//   }
+//   60% {
+//     background: url("../../assets/hug.jpeg") no-repeat center center fixed;
+//   }
+//   70% {
+//     background: url("../../assets/allmightback.jpeg") no-repeat center center
+//       fixed;
+//   }
+//   80% {
+//     background: url("../../assets/deku.png") no-repeat center center fixed;
+//   }
+//   90% {
+//     background: url("../../assets/allmightRaiseFist.jpeg") no-repeat center
+//       center fixed;
+//   }
+//   100% {
+//     background: url("../../assets/allmight.jpeg") no-repeat center center fixed;
+//   }
+// }
