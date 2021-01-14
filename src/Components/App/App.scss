@@ -12,6 +12,12 @@ html, body {
   -webkit-text-stroke-color: black;
 }
 
+.title-link {
+  text-decoration: none;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: blue;
+}
+
 .title {
   margin-top: 50px;
 }

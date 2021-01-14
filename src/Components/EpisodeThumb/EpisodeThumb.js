@@ -1,9 +1,14 @@
 import React from "react";
+import "./EpisodeThumb.scss";
 
-const EpisodeThumb = () => {
-    return (
-        <h1>Episode Thumb</h1>
-    )
-}
+const EpisodeThumb = ({ data }) => {
+  return (
+    <div>
+      <h1>{data.title}</h1>
+      <p>{data.aired}</p>
+      <a className="external-link" href={data.video_url}>Episode Details</a>
+    </div>
+  );
+};
 
 export default EpisodeThumb;

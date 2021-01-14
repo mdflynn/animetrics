@@ -45,10 +45,20 @@ const EpisodeDisplay = () => {
     });
   }
 
+  const generateThumbs = () => {
+    // episode_id,
+    // title,
+    // aired,
+    // video_url
+    return episodes.map(episode => {
+      return <EpisodeThumb data={episode} />
+    })
+  }
+
   return (
     <>
       <h1>Episode Display</h1>
-      <h1>{ episodes.length > 0 && episodes[0].title}</h1>
+      <h1>{ episodes.length > 0 && generateThumbs()}</h1>
       <h1>{ movies.length > 0 && movies[0].title}</h1>
       <Link to="/">
         <button>Home</button>

@@ -1,0 +1,11 @@
+
+.external-link {
+    text-decoration: none;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: blue;
+  }
+  
+  .external-link:visited, .external-link:after, .external-link:before {
+    color: white;
+  }
+  
