@@ -1,25 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { fetchSeasons, fetchMovies } from "../../APIcalls";
 import { Link, useParams } from "react-router-dom";
 
 const EpisodeDisplay = () => {
-  //   const [mhaSeasons, setMhaSeasons] = useState([]);
+  let { season } = useParams();
 
-  //   useEffect(() => {
-  //     getSeasons().then((data) => {
-  //       const filteredResults = data.results.filter((result) => {
-  //         return result.type.includes("Boku");
-  //       });
-  //       setMhaSeasons(filteredResults);
-  //     });
-  //   }, []);
-  
-  let { number } = useParams();
+  const determineFetch = (url) => {
+    switch (url) {
+      case "season1":
+        return "31964";
+      case "season2":
+        return "33486";
+      case "season3":
+        return "36456";
+      case "season4":
+        return "38408";
+      case "season5":
+        return "41587";
+      default:
+        return url;
+    }
+  };
 
-  console.log(number);
+  const [episodes, setEpisodes] = useState([]);
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+      season === "movies" ? getMovies() : getSeasons();
+  }, []);
+
+  const getSeasons = () => {
+    fetchSeasons(determineFetch(season)).then((data) => {
+        setEpisodes(data.episodes);
+    });
+  }
+
+  const getMovies = () => {
+    fetchMovies().then((data) => {
+        const filteredResults = data.results.filter((result) => {
+          return result.type === "Movie" && result.title.includes("Boku"); 
+        });
+        setMovies(filteredResults);
+    });
+  }
 
   return (
     <>
       <h1>Episode Display</h1>
+      <h1>{ episodes.length > 0 && episodes[0].title}</h1>
+      <h1>{ movies.length > 0 && movies[0].title}</h1>
       <Link to="/">
         <button>Home</button>
       </Link>

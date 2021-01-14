@@ -7,7 +7,7 @@ import "./MainPage.scss";
 const MainPage = () => {
   return (
     <div className="div-bg">
-      <p>
+      <p className="title">
         ANIMEtrics
         <br />
         For My Hero Academia Fanatics
