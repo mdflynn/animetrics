@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchSeasons, fetchMovies } from "../../APIcalls";
 import { Link, useParams } from "react-router-dom";
+import EpisodeThumb from "../EpisodeThumb/EpisodeThumb";
 
 const EpisodeDisplay = () => {
   let { season } = useParams();

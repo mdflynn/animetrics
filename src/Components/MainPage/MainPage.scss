@@ -5,7 +5,8 @@ main {
 }
 
 .div-bg {
-  margin: 0;
+  // margin: 0;
+  margin-top: -75px;
   height: 100%;
   display: flex;
   // flex-direction: column;
@@ -15,6 +16,9 @@ main {
   margin: 0;
   color: white;
   text-align: center;
+  .title-span{
+    font-size: 44px;
+  }
 }
 
 .season-card {
@@ -23,7 +27,12 @@ main {
   background-color: white;
   border: 1px solid black;
   margin: 10px;
-  padding-bottom: 75px;
+  font-size: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: blue;
 }
 
 .link {
@@ -33,13 +42,17 @@ main {
   text-decoration: none;
 }
 
+.link:after, .link:visited {
+  color: white;
+}
+
 ul {
   list-style: none;
 }
 
 .season-div {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   flex-wrap: wrap;
   width: auto;
   margin: 75px 50px 0 0;

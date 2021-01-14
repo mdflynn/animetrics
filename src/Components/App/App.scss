@@ -1,7 +1,19 @@
+@font-face {
+  font-family: 'Badaboom';
+  src: url('../../assets/BADABB__.TTF') format(('truetype'))
+}
+
 html, body {
   height: 100%;
   margin: 0;
   overflow: hidden;
+  font-family: Badaboom;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.title {
+  margin-top: 50px;
 }
 
 body {
