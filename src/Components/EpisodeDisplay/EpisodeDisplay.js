@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { fetchSeasons } from "../../APIcalls";
+import { fetchSeasons } from "../../API/apiCalls";
 import { useParams } from "react-router-dom";
 import EpisodeThumb from "../EpisodeThumb/EpisodeThumb";
 
