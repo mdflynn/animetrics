@@ -25,6 +25,7 @@ const EpisodeThumb = (props) => {
         href={video_url}
         target="_blank"
         rel="noreferrer"
+        data-testid={episode_id}
       >
         More Details...
       </a>
