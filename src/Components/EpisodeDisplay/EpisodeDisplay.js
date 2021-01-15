@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { fetchSeasons } from "../../APIcalls";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import EpisodeThumb from "../EpisodeThumb/EpisodeThumb";
 
 const EpisodeDisplay = () => {
@@ -39,7 +39,6 @@ const EpisodeDisplay = () => {
       return <EpisodeThumb key={episode.episode_id} data={episode} />;
     });
   };
-  console.log(episodes);
 
   return (
     <h1 className="thumb-container">
