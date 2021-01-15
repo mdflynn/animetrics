@@ -40,10 +40,22 @@ const EpisodeDisplay = () => {
     });
   };
 
+  const formatTitle = () => {
+    const capFirstLetter = season.charAt(0).toUpperCase() + season.slice(1);
+    const date =
+      capFirstLetter.slice(0, 6) +
+      " " +
+      capFirstLetter.slice(capFirstLetter.length - 1);
+    return date;
+  };
+
   return (
-    <h1 className="thumb-container">
-      {episodes.length > 0 && generateEpisodeThumbs()}
-    </h1>
+    <>
+      <h1 className="season-title">{formatTitle()}</h1>
+      <div className="thumb-container">
+        {episodes.length > 0 && generateEpisodeThumbs()}
+      </div>
+    </>
   );
 };
 
