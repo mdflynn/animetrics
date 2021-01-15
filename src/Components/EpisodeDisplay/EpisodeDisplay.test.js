@@ -4,8 +4,16 @@ import { screen, render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
+import { act } from "react-dom/test-utils";
 import { fetchSeasons } from "../../APIcalls";
+
 jest.mock("../../APIcalls");
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useParams: () => ({
+    season: "season2",
+  }),
+}));
 
 describe("EpisodeDisplay", () => {
   beforeEach(() => {
@@ -80,5 +88,17 @@ describe("EpisodeDisplay", () => {
     );
     const link = await waitFor(() => screen.getByText("Aired on: 04/03/2016"));
     expect(link).toBeInTheDocument();
+  });
+
+  it("should render an episode with a link", async () => {
+    await act(async () => {
+      render(
+        <MemoryRouter>
+          <EpisodeDisplay />
+        </MemoryRouter>
+      );
+    });
+    const seasonTitle = screen.getByText("Season 2");
+    expect(seasonTitle).toBeInTheDocument();
   });
 });
