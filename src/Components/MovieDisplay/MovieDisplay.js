@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchMovies } from "../../APIcalls";
+import MovieThumb from "../MovieThumb/MovieThumb";
 import "./MovieDisplay.scss";
 
 const MovieDisplay = () => {
@@ -14,10 +15,18 @@ const MovieDisplay = () => {
     });
   }, []);
 
-  console.log(movies);
+  const generateMovieThumbs = () => {
+      return movies.map(movie => {
+          return <MovieThumb data={movie} />;
+      })
+  }
 
 
-  return <h1>Yooo</h1>;
+  return (
+      <section className="movie-section">
+          {generateMovieThumbs()}
+      </section>
+  )
 };
 
 export default MovieDisplay;
