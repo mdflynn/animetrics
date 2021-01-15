@@ -4,7 +4,7 @@ import "./MovieThumb.scss";
 
 const MovieThumb = (props) => {
 
-  const { image_url, rated, start_date, synopsis, url , title} = props.data;
+  const { image_url, rated, start_date, synopsis, url , title, mal_id} = props.data;
 
   const formatDate = (dateInfo) => {
     const isolateDate = dateInfo.substr(0, 10);
@@ -23,7 +23,16 @@ const MovieThumb = (props) => {
           {synopsis}
         </p>
         <p className="rated">Rated {rated}</p>
-        <p className="air-date">Premiered om {formatDate(start_date)}</p>
+        <p className="air-date">Premiered on {formatDate(start_date)}</p>
+        <a
+        className="external-link"
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        data-testid={mal_id}
+      >
+        More Details...
+      </a>
       </div>
     </article>
   );
