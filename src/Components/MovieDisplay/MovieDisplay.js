@@ -16,8 +16,8 @@ const MovieDisplay = () => {
   }, []);
 
   const generateMovieThumbs = () => {
-      return movies.map(movie => {
-          return <MovieThumb data={movie} />;
+      return movies.map((movie, index) => {
+          return <MovieThumb key={index} data={movie} />;
       })
   }
 
