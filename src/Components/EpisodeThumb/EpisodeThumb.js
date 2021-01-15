@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./EpisodeThumb.scss";
 
 const EpisodeThumb = (props) => {
-  const { title, aired, video_url } = props.data;
+  const { title, aired, video_url, episode_id } = props.data;
 
   const formatDate = (dateInfo) => {
     if (!dateInfo) {
@@ -17,6 +17,7 @@ const EpisodeThumb = (props) => {
 
   return (
     <article className="episode-thumb">
+      <p className="episode-id">Episode #{episode_id}</p>
       <h1>{title}</h1>
       <p>Aired on: {formatDate(aired)}</p>
       <a
@@ -25,7 +26,7 @@ const EpisodeThumb = (props) => {
         target="_blank"
         rel="noreferrer"
       >
-        Episode Details
+        More Details...
       </a>
     </article>
   );
@@ -37,4 +38,5 @@ EpisodeThumb.propTypes = {
   title: PropTypes.string,
   aired: PropTypes.string,
   video_url: PropTypes.string,
+  episode_id: PropTypes.number
 };

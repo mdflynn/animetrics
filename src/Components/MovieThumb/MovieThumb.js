@@ -37,4 +37,5 @@ MovieThumb.propTypes = {
   start_date: PropTypes.string,
   synopsis: PropTypes.string,
   url: PropTypes.string,
+  title: PropTypes.string
 };
