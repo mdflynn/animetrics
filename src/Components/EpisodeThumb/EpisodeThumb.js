@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 import "./EpisodeThumb.scss";
 
 const EpisodeThumb = (props) => {
-
   const { title, aired, video_url } = props.data;
 
   const formatDate = (dateInfo) => {
+    if (!dateInfo) {
+      return `Missing Data`;
+    }
     const isolateDate = dateInfo.substr(0, 10);
     const splitDate = isolateDate.split("-");
     const date = `${splitDate[1]}/${splitDate[2]}/${splitDate[0]}`;
@@ -17,7 +19,12 @@ const EpisodeThumb = (props) => {
     <article className="episode-thumb">
       <h1>{title}</h1>
       <p>Aired on: {formatDate(aired)}</p>
-      <a className="external-link" href={video_url} target="_blank">
+      <a
+        className="external-link"
+        href={video_url}
+        target="_blank"
+        rel="noreferrer"
+      >
         Episode Details
       </a>
     </article>
