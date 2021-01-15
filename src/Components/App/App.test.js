@@ -125,7 +125,7 @@ describe("App integration", () => {
 
     const season1 = screen.getByRole("link", { name: /season 1/i });
     userEvent.click(season1);
-    
+
     const externalLink = await waitFor(() => screen.getByTestId("2"));
     expect(externalLink.closest("a")).toHaveAttribute(
       "href",
@@ -145,7 +145,11 @@ describe("App integration", () => {
     const season1 = screen.getByRole("link", { name: /season 1/i });
     userEvent.click(season1);
 
-    const titleButton = await waitFor(() => screen.getByRole("link", { name: /animetrics for my hero academia fanatics/i }))
+    const titleButton = await waitFor(() =>
+      screen.getByRole("link", {
+        name: /animetrics for my hero academia fanatics/i,
+      })
+    );
     userEvent.click(titleButton);
 
     const seasonCard = screen.getByRole("link", { name: /season 3/i });
@@ -153,5 +157,64 @@ describe("App integration", () => {
 
     const seasonDetails = screen.queryByText("Izuku Midoriya: Origin");
     expect(seasonDetails).not.toBeInTheDocument();
+  });
+
+  //movies integration
+
+  it("should render the movies on click", async () => {
+    await act(async () => {
+      render(
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      );
+      const movieButton = screen.queryByRole("link", { name: /movies/i });
+      userEvent.click(movieButton);
+
+      const movieTitle = await waitFor(() =>
+        screen.getByText("Boku Awesome Anime Movie")
+      );
+      expect(movieTitle).toBeInTheDocument();
+      expect(movieButton).not.toBeInTheDocument();
+    });
+  });
+
+  it("should be have an external link", async () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    const movieButton = screen.queryByRole("link", { name: /movies/i });
+    userEvent.click(movieButton);
+
+    const externalLink = await waitFor(() => screen.getByTestId("1"));
+    expect(externalLink.closest("a")).toHaveAttribute(
+      "href",
+      "https://myanimelist.net/anime/31964/Boku_no_Hero_Academia"
+    );
+  });
+
+  it("should return home when clicking title from movie page", async () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    const movieButton = screen.getByText("Movies");
+    userEvent.click(movieButton);
+
+    const movieTitle = await waitFor(() =>
+      screen.getByText("Boku Awesome Anime Movie")
+    );
+    expect(movieTitle).toBeInTheDocument();
+
+    const titleButton = screen.getByRole("link", {
+      name: /animetrics for my hero academia fanatics/i,
+    });
+    userEvent.click(titleButton);
+
+    expect(screen.getByRole("link", { name: /season 1/i })).toBeInTheDocument();
+    expect(movieTitle).not.toBeInTheDocument();
   });
 });
