@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { fetchSeasons, fetchMovies } from "../../APIcalls";
+import { fetchSeasons } from "../../APIcalls";
 import { Link, useParams } from "react-router-dom";
 import EpisodeThumb from "../EpisodeThumb/EpisodeThumb";
 
@@ -19,48 +19,33 @@ const EpisodeDisplay = () => {
       case "season5":
         return "41587";
       default:
-        return url;
     }
   };
 
   const [episodes, setEpisodes] = useState([]);
-  const [movies, setMovies] = useState([]);
 
   const getSeasons = useCallback(() => {
     fetchSeasons(determineFetch(season)).then((data) => {
-        setEpisodes(data.episodes);
+      setEpisodes(data.episodes);
     });
-  }, [season])
-
-  const getMovies = () => {
-    fetchMovies().then((data) => {
-        const filteredResults = data.results.filter((result) => {
-          return result.type === "Movie" && result.title.includes("Boku"); 
-        });
-        setMovies(filteredResults);
-    });
-  }
+  }, [season]);
 
   useEffect(() => {
-      season === "movies" ? getMovies() : getSeasons();
-  }, [season, getSeasons]);
+    getSeasons();
+  }, [getSeasons]);
 
-
-  const generateThumbs = () => {
-    // episode_id,
-    // title,
-    // aired,
-    // video_url
-    return episodes.map(episode => {
-      return <EpisodeThumb data={episode} />
-    })
-  }
+  const generateEpisodeThumbs = () => {
+    return episodes.map((episode) => {
+      return <EpisodeThumb key={episode.episode_id} data={episode} />;
+    });
+  };
 
   return (
     <>
       <h1>Episode Display</h1>
-      <h1 className="thumb-container">{ episodes.length > 0 && generateThumbs()}</h1>
-      <h1>{ movies.length > 0 && movies[0].title}</h1>
+      <h1 className="thumb-container">
+        {episodes.length > 0 && generateEpisodeThumbs()}
+      </h1>
       <Link to="/">
         <button>Home</button>
       </Link>
