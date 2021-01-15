@@ -9,7 +9,7 @@ const MovieDisplay = () => {
   useEffect(() => {
     fetchMovies().then((data) => {
       const filteredResults = data.results.filter((result) => {
-        return result.type === "Movie" && result.title.includes("Boku");
+        return result.type === "Movie" && result.title.includes("Boku") && result.start_date;
       });
       setMovies(filteredResults);
     });
@@ -20,7 +20,6 @@ const MovieDisplay = () => {
           return <MovieThumb data={movie} />;
       })
   }
-
 
   return (
       <section className="movie-section">
