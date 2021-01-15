@@ -1,0 +1,39 @@
+.external-link {
+  text-decoration: none;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: blue;
+}
+
+.external-link:visited,
+.external-link:after,
+.external-link:before,
+.external-link:link {
+  color: white;
+}
+
+.episode-thumb {
+  height: 225px;
+  width: 225px;
+  background-color: blanchedalmond;
+  border: 1px solid black;
+  margin: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  h1 {
+    font-size: 28px;
+    color: red;
+    text-align: center;
+  }
+  p {
+    color: yellow;
+    font-size: 24px;
+  }
+}
+
+.thumb-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
