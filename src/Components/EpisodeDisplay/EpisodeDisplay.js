@@ -39,17 +39,12 @@ const EpisodeDisplay = () => {
       return <EpisodeThumb key={episode.episode_id} data={episode} />;
     });
   };
+  console.log(episodes);
 
   return (
-    <>
-      <h1>Episode Display</h1>
-      <h1 className="thumb-container">
-        {episodes.length > 0 && generateEpisodeThumbs()}
-      </h1>
-      <Link to="/">
-        <button>Home</button>
-      </Link>
-    </>
+    <h1 className="thumb-container">
+      {episodes.length > 0 && generateEpisodeThumbs()}
+    </h1>
   );
 };
 
