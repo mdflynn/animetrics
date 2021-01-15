@@ -3,6 +3,7 @@ import MainPage from "../MainPage/MainPage";
 import "./App.scss";
 import { Route, Switch, Link } from "react-router-dom";
 import EpisodeDisplay from "../EpisodeDisplay/EpisodeDisplay";
+import MovieDisplay from "../MovieDisplay/MovieDisplay";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route exact path="/animetrics" component={MainPage} />
+        <Route exact path="/movies" component={MovieDisplay} />
         <Route path="/:season" component={EpisodeDisplay} />
       </Switch>
     </>

@@ -1,0 +1,17 @@
+.movie-wrapper {
+    margin: 30px;
+    height: 500px;
+    width: 62em;
+    border: 5px solid black;
+    background: blanchedalmond;
+    display: flex;
+    img {
+        width: 75%;
+    }
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

@@ -1,0 +1,33 @@
+.movie-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.movie-syn {
+  font-size: 26px;
+  color: red;
+  margin: 0;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.movie-info {
+  margin-left: 10px;
+}
+
+.rated {
+    margin: 0;
+    font-size: 44px;
+}
+
+.air-date {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.movie-title {
+    font-size: 44px;
+    margin-bottom: 0;
+}
