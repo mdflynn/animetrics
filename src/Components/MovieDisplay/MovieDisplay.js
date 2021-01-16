@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchMovies } from "../../APIcalls";
+import { fetchMovies } from "../../API/apiCalls";
 import MovieThumb from "../MovieThumb/MovieThumb";
 import "./MovieDisplay.scss";
 

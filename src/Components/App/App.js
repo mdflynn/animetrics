@@ -4,6 +4,7 @@ import "./App.scss";
 import { Route, Switch, Link } from "react-router-dom";
 import EpisodeDisplay from "../EpisodeDisplay/EpisodeDisplay";
 import MovieDisplay from "../MovieDisplay/MovieDisplay";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route exact path="/" component={MainPage} />
         <Route exact path="/animetrics" component={MainPage} />
         <Route exact path="/movies" component={MovieDisplay} />
+        <Route exact path="/error" component={ErrorPage} />
         <Route path="/:season" component={EpisodeDisplay} />
       </Switch>
     </>

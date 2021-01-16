@@ -4,8 +4,8 @@ import { screen, render, waitFor } from "@testing-library/react";
 import { act } from "react-dom/test-utils";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
-import { fetchMovies } from "../../APIcalls";
-jest.mock("../../APIcalls");
+import { fetchMovies } from "../../API/apiCalls";
+jest.mock("../../API/apiCalls");
 
 describe("MovieDisplay", () => {
   beforeEach(() => {

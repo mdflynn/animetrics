@@ -22,19 +22,18 @@ html, body {
 }
 
 body {
-  // opacity: 0.8;
-  // background:rgba(255,255,255,0.3);
-  background: url("../../assets/allmight.jpeg"),
-  url("../../assets/groupshot.jpeg"),
-  url("../../assets/battle.jpeg"),
-  url("../../assets/dekuPunk.png"),
-  url("../../assets/endeavor.jpeg"),
-  url("../../assets/group2.jpeg"),
-  url("../../assets/hug.jpeg"),
-  url("../../assets/allmightback.jpeg"),
-  url("../../assets/deku.png"),
-  url("../../assets/allmightRaiseFist.jpeg"),
-  url("../../assets/allmight.jpeg");
+  background: 
+    url("../../assets/allmight.jpeg"),
+    url("../../assets/groupshot.jpeg"),
+    url("../../assets/battle.jpeg"),
+    url("../../assets/dekuPunk.png"),
+    url("../../assets/endeavor.jpeg"),
+    url("../../assets/group2.jpeg"),
+    url("../../assets/hug.jpeg"),
+    url("../../assets/allmightback.jpeg"),
+    url("../../assets/deku.png"),
+    url("../../assets/allmightRaiseFist.jpeg"),
+    url("../../assets/allmight.jpeg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
