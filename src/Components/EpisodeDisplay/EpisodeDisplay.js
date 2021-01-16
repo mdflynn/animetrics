@@ -25,13 +25,25 @@ const EpisodeDisplay = () => {
   const [episodes, setEpisodes] = useState([]);
   const getSeasons = useCallback(() => {
     fetchSeasons(determineFetch(season)).then((data) => {
-      setEpisodes(data.episodes);
+      const clean = cleanEpisodeData(data)
+      setEpisodes(clean);
     });
   }, [season]);
 
   useEffect(() => {
     getSeasons();
   }, [getSeasons]);
+
+  const cleanEpisodeData = (rawData) => {
+    return rawData.episodes.map(data => {
+      return {
+        title: data.title,
+        aired: data.aired,
+        video_url: data.video_url,
+        episode_id: data.episode_id
+      }
+    })
+  }
 
   const generateEpisodeThumbs = () => {
     return episodes.map((episode) => {
