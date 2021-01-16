@@ -20,6 +20,23 @@ body {
 
 .title {
   margin-top: 50px;
+  transition: all .2s ease-in-out;
+  .title-span {
+    font-size: 80px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: red;
+  }
+}
+
+.title:hover { 
+  transform: scale(1.1); 
+  
+}
+
+.sub-title {
+  color: red;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 body {
