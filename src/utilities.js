@@ -1,5 +1,8 @@
 export const cleanEpisodeData = (rawData) => {
-  return rawData.episodes.map((data) => {
+  if (!rawData.episodes) {
+    return;
+  }
+  const cleanData = rawData.episodes.map((data) => {
     return {
       title: data.title,
       aired: data.aired,
@@ -7,6 +10,7 @@ export const cleanEpisodeData = (rawData) => {
       episode_id: data.episode_id,
     };
   });
+  return cleanData;
 };
 
 export const filterMovieResults = (rawData) => {
