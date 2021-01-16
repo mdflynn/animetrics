@@ -1,6 +1,6 @@
 import React from "react";
 import EpisodeDisplay from "./EpisodeDisplay";
-import { screen, render, waitFor } from "@testing-library/react";
+import { screen, render, waitFor, queryByText } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
 import { act } from "react-dom/test-utils";
@@ -118,5 +118,8 @@ describe("EpisodeDisplay", () => {
 
     const errorText = await waitFor(() => screen.getByText("Page Not Found"));
     expect(errorText).toBeInTheDocument();
+
+    const title = screen.queryByText("Izuku Midoriya: Origin");
+    expect(title).not.toBeInTheDocument();
   });
 });
