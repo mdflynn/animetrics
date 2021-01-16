@@ -5,12 +5,10 @@ import { formatDate } from "../../utilities";
 
 const EpisodeThumb = (props) => {
   const { title, aired, video_url, episode_id } = props.data;
+  console.log(video_url);
 
-  return (
-    <article className="episode-thumb">
-      <p className="episode-id">Episode #{episode_id}</p>
-      <h1>{title}</h1>
-      <p>Aired on: {formatDate(aired)}</p>
+  const generateLink = () => {
+    const externalSite = (
       <a
         className="external-link"
         href={video_url}
@@ -20,6 +18,19 @@ const EpisodeThumb = (props) => {
       >
         More Details...
       </a>
+    );
+    const decideLink = !video_url ? <p className="nolink">No additional details </p> : externalSite;
+    return decideLink;
+  };
+
+  const loadLinks = generateLink();
+
+  return (
+    <article className="episode-thumb">
+      <p className="episode-id">Episode #{episode_id}</p>
+      <h1>{title}</h1>
+      <p>Aired on: {formatDate(aired)}</p>
+      {loadLinks}
     </article>
   );
 };
