@@ -8,16 +8,35 @@ const MovieDisplay = () => {
 
   useEffect(() => {
     fetchMovies().then((data) => {
-      const filteredResults = data.results.filter((result) => {
-        return (
-          result.type === "Movie" &&
-          result.title.includes("Boku") &&
-          result.start_date
-        );
-      });
-      setMovies(filteredResults);
+      const filterData = filteredResults(data);
+      const clean = cleanData(filterData);
+      setMovies(clean);
     });
   }, []);
+
+  const filteredResults = (unfilteredData) => {
+    return unfilteredData.results.filter((result) => {
+      return (
+        result.type === "Movie" &&
+        result.title.includes("Boku") &&
+        result.start_date
+      );
+    });
+  };
+
+  const cleanData = (dirtyData) => {
+    return dirtyData.map((data) => {
+      return {
+        image_url: data.image_url,
+        rated: data.rated,
+        start_date: data.start_date,
+        synopsis: data.synopsis,
+        url: data.url,
+        title: data.title,
+        mal_id: data.mal_id,
+      };
+    });
+  };
 
   const generateMovieThumbs = () => {
     return movies.map((movie, index) => {
