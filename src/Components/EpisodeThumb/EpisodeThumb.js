@@ -4,9 +4,8 @@ import "./EpisodeThumb.scss";
 import { formatDate } from "../../utilities";
 
 const EpisodeThumb = (props) => {
-  const { title, aired, video_url, episode_id } = props.data;
-  console.log(video_url);
-
+  const { title, aired, video_url, episode_id, id } = props.data;
+  console.log(props.data);
   const generateLink = () => {
     const externalSite = (
       <a
@@ -27,7 +26,7 @@ const EpisodeThumb = (props) => {
 
   return (
     <article className="episode-thumb">
-      <p className="episode-id">Episode #{episode_id}</p>
+      <p className="episode-id">Episode #{id}</p>
       <h1>{title}</h1>
       <p>Aired on: {formatDate(aired)}</p>
       {loadLinks}
@@ -42,4 +41,5 @@ EpisodeThumb.propTypes = {
   aired: PropTypes.string,
   video_url: PropTypes.string,
   episode_id: PropTypes.number,
+  id: PropTypes.number,
 };

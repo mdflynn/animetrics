@@ -25,6 +25,7 @@ const EpisodeDisplay = () => {
   };
 
   const [episodes, setEpisodes] = useState([]);
+
   const getSeasons = useCallback(() => {
     fetchSeasons(determineFetch(season)).then((data) => {
       const clean = cleanEpisodeData(data);
@@ -37,8 +38,8 @@ const EpisodeDisplay = () => {
   }, [getSeasons]);
 
   const generateEpisodeThumbs = () => {
-    return episodes.map((episode) => {
-      return <EpisodeThumb key={episode.episode_id} data={episode} />;
+    return episodes.map((episode, index) => {
+      return <EpisodeThumb key={episode.episode_id} data={{...episode, id:index + 1}} />;
     });
   };
 
