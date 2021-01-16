@@ -1,11 +1,13 @@
 .movie-wrapper {
   margin: 30px;
   height: 500px;
-  width: 62em;
-  border: 5px solid black;
+  width: 1000px;
+  border: 10px solid black;
+  border-radius: 5%;
   background: blanchedalmond;
   display: flex;
   img {
+    border-radius: 4% 0 0 4%;
     width: 75%;
   }
 }
