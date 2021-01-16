@@ -3,6 +3,7 @@ import { fetchSeasons } from "../../API/apiCalls";
 import { useParams, Redirect } from "react-router-dom";
 import EpisodeThumb from "../EpisodeThumb/EpisodeThumb";
 import { cleanEpisodeData, formatTitle } from "../../utilities";
+import "./EpisodeDisplay.scss";
 
 const EpisodeDisplay = () => {
   let { season } = useParams();
