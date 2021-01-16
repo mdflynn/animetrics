@@ -1,14 +1,15 @@
+@import "../../mixins";
+
 .error {
   background: url("../../assets/404.jpg") center center fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  @include format-background;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -135px;
+  margin-top: -175px;
+  height: 110%;
   p {
+    @include text-borders(2px, white);
     font-size: 68px;
   }
 }

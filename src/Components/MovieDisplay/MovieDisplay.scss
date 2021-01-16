@@ -1,6 +1,7 @@
+@import "../../mixins";
+
 .movie-section {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -9,8 +10,7 @@
   font-size: 26px;
   color: red;
   margin: 0;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  @include text-borders(1px, black);
 }
 
 .movie-info {

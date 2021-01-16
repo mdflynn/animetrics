@@ -1,3 +1,5 @@
+@import "../../mixins";
+
 @font-face {
   font-family: "Badaboom";
   src: url("../../assets/BADABB__.TTF") format(("truetype"));
@@ -8,18 +10,30 @@ body {
   height: 100%;
   margin: 0;
   font-family: Badaboom;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  @include text-borders(1px, black);
 }
 
 .title-link {
   text-decoration: none;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: blue;
+  @include text-borders(1px, blue);
 }
 
 .title {
   margin-top: 50px;
+  transition: all .2s ease-in-out;
+  .title-span {
+    font-size: 80px;
+    @include text-borders(1px, red);
+  }
+}
+
+.title:hover { 
+  transform: scale(1.1); 
+}
+
+.sub-title {
+  color: red;
+  @include text-borders(1px, black);
 }
 
 body {
@@ -35,11 +49,8 @@ body {
     url("../../assets/deku.png"),
     url("../../assets/allmightRaiseFist.jpeg"),
     url("../../assets/allmight.jpeg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  animation: rotateBg 120s infinite;
-  background-size: cover;
+    @include format-background;
+    animation: rotateBg 120s infinite;
 }
 
 @keyframes rotateBg {
@@ -65,15 +76,13 @@ body {
     background: url("../../assets/hug.jpeg") no-repeat center center fixed;
   }
   70% {
-    background: url("../../assets/allmightback.jpeg") no-repeat center center
-      fixed;
+    background: url("../../assets/allmightback.jpeg") no-repeat center center fixed;
   }
   80% {
     background: url("../../assets/deku.png") no-repeat center center fixed;
   }
   90% {
-    background: url("../../assets/allmightRaiseFist.jpeg") no-repeat center
-      center fixed;
+    background: url("../../assets/allmightRaiseFist.jpeg") no-repeat center center fixed;
   }
   100% {
     background: url("../../assets/allmight.jpeg") no-repeat center center fixed;

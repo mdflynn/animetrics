@@ -1,17 +1,21 @@
+@import "../../variables";
+@import "../../mixins";
+
 .movie-wrapper {
   margin: 30px;
   height: 500px;
-  width: 62em;
-  border: 5px solid black;
-  background: blanchedalmond;
+  width: 1000px;
+  border: $border;
+  border-radius: 5%;
+  background: $background;
   display: flex;
   img {
+    border-radius: 4% 0 0 4%;
     width: 75%;
   }
 }
 
 .movie-info {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   justify-content: space-around;
 }

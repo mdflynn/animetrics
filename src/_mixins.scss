@@ -1,0 +1,16 @@
+@mixin text-borders($width, $color) {
+  -webkit-text-stroke-width: $width;
+  -webkit-text-stroke-color: $color;
+}
+
+@mixin format-background {
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}

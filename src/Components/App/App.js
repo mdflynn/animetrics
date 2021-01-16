@@ -13,7 +13,7 @@ const App = () => {
         <h1 className="title">
           <span className="title-span">ANIMEtrics</span>
           <br />
-          For My Hero Academia Fanatics
+          <span className="sub-title">For My Hero Academia Fanatics</span>
         </h1>
       </Link>
       <Switch>

@@ -3,6 +3,7 @@ import { fetchSeasons } from "../../API/apiCalls";
 import { useParams, Redirect } from "react-router-dom";
 import EpisodeThumb from "../EpisodeThumb/EpisodeThumb";
 import { cleanEpisodeData, formatTitle } from "../../utilities";
+import "./EpisodeDisplay.scss";
 
 const EpisodeDisplay = () => {
   let { season } = useParams();
@@ -24,6 +25,7 @@ const EpisodeDisplay = () => {
   };
 
   const [episodes, setEpisodes] = useState([]);
+
   const getSeasons = useCallback(() => {
     fetchSeasons(determineFetch(season)).then((data) => {
       const clean = cleanEpisodeData(data);
@@ -36,13 +38,18 @@ const EpisodeDisplay = () => {
   }, [getSeasons]);
 
   const generateEpisodeThumbs = () => {
-    return episodes.map((episode) => {
-      return <EpisodeThumb key={episode.episode_id} data={episode} />;
+    return episodes.map((episode, index) => {
+      return (
+        <EpisodeThumb
+          key={episode.episode_id}
+          data={{ ...episode, id: index + 1 }}
+        />
+      );
     });
   };
 
   const generateLoadingContent = () => {
-    if (episodes === undefined) {
+    if (!episodes) {
       return <Redirect to="/error" />;
     } else if (episodes.length > 0) {
       return generateEpisodeThumbs();
@@ -51,10 +58,21 @@ const EpisodeDisplay = () => {
     }
   };
 
+  const generateSeasonFive = () => {
+    const content = generateLoadingContent();
+    const comingSoon = <p className="coming-soon">Coming Soon...<br />March 27th, 2021</p>;
+    const decideSeason = season === "season5" ? comingSoon : content;
+    return decideSeason;
+  };
+
+  const title = formatTitle(season);
+
+  const loadContent = generateSeasonFive();
+
   return (
     <>
-      <h1 className="season-title">{formatTitle(season)}</h1>
-      <div className="thumb-container">{generateLoadingContent()}</div>
+      <h1 className="season-title">{title}</h1>
+      <div className="thumb-container">{loadContent}</div>
     </>
   );
 };
