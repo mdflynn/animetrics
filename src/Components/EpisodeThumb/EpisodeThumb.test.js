@@ -58,4 +58,24 @@ describe("EpisodeThumb", () => {
     const number = screen.getByText("Episode #1");
     expect(number).toBeInTheDocument();
   });
+  it("should render no detail if no url", () => {
+    episodeData.video_url = null;
+    render(
+      <MemoryRouter>
+        <EpisodeThumb data={episodeData} />
+      </MemoryRouter>
+    );
+    const noDetails = screen.getByText("No additional details");
+    expect(noDetails).toBeInTheDocument();
+  })
+  it("should render missing data if not date", () => {
+    episodeData.aired = null;
+    render(
+      <MemoryRouter>
+        <EpisodeThumb data={episodeData} />
+      </MemoryRouter>
+    );
+    const noDate = screen.getByText("Aired on: Missing Date");
+    expect(noDate).toBeInTheDocument();
+  })
 });
