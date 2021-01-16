@@ -1,8 +1,7 @@
 @import "../../mixins";
 
 .movie-section {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   align-items: center;
   justify-content: space-evenly;
 }

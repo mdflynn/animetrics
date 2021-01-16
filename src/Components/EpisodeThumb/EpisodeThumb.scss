@@ -1,4 +1,5 @@
 @import "../../mixins";
+@import "../../variables";
 
 .external-link {
   text-decoration: none;
@@ -16,13 +17,12 @@
 .episode-thumb {
   height: 275px;
   width: 300px;
-  background: blanchedalmond;
-  border: 10px solid black;
+  background: $background;
+  border: $border;
   border-radius: 5%;
   margin: 15px;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   justify-content: space-around;
   h1 {
     font-size: 38px;

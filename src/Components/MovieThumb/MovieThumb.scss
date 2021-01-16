@@ -1,10 +1,13 @@
+@import "../../variables";
+@import "../../mixins";
+
 .movie-wrapper {
   margin: 30px;
   height: 500px;
   width: 1000px;
-  border: 10px solid black;
+  border: $border;
   border-radius: 5%;
-  background: blanchedalmond;
+  background: $background;
   display: flex;
   img {
     border-radius: 4% 0 0 4%;
@@ -13,7 +16,6 @@
 }
 
 .movie-info {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   justify-content: space-around;
 }
