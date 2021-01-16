@@ -53,10 +53,14 @@ const EpisodeDisplay = () => {
     }
   };
 
+  const title = formatTitle(season);
+
+  const loadContent = generateLoadingContent()
+
   return (
     <>
-      <h1 className="season-title">{formatTitle(season)}</h1>
-      <div className="thumb-container">{generateLoadingContent()}</div>
+      <h1 className="season-title">{title}</h1>
+      <div className="thumb-container">{loadContent}</div>
     </>
   );
 };

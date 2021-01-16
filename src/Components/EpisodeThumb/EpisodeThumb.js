@@ -5,7 +5,7 @@ import { formatDate } from "../../utilities";
 
 const EpisodeThumb = (props) => {
   const { title, aired, video_url, episode_id, id } = props.data;
-  console.log(props.data);
+
   const generateLink = () => {
     const externalSite = (
       <a
@@ -24,11 +24,13 @@ const EpisodeThumb = (props) => {
 
   const loadLinks = generateLink();
 
+  const date = formatDate(aired);
+
   return (
     <article className="episode-thumb">
       <p className="episode-id">Episode #{id}</p>
       <h1>{title}</h1>
-      <p>Aired on: {formatDate(aired)}</p>
+      <p>Aired on: {date}</p>
       {loadLinks}
     </article>
   );
