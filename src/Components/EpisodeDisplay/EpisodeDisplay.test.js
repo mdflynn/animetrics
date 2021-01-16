@@ -5,6 +5,8 @@ import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
 import { act } from "react-dom/test-utils";
 import { fetchSeasons } from "../../API/apiCalls";
+import App from "../App/App";
+import userEvent from "@testing-library/user-event";
 
 jest.mock("../../API/apiCalls");
 jest.mock("react-router-dom", () => ({
@@ -15,8 +17,9 @@ jest.mock("react-router-dom", () => ({
 }));
 
 describe("EpisodeDisplay", () => {
+  let episodeDetails;
   beforeEach(() => {
-    const episodeDetails = {
+    episodeDetails = {
       episodes: [
         {
           episode_id: 1,
@@ -99,5 +102,21 @@ describe("EpisodeDisplay", () => {
     });
     const seasonTitle = screen.getByText("Season 2");
     expect(seasonTitle).toBeInTheDocument();
+  });
+
+  it("should render an error page if no episode data", async () => {
+    episodeDetails.episodes = null;
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    const season = screen.getByRole("link", {
+      name: /season\-one\-navigation/i,
+    });
+    userEvent.click(season);
+
+    const errorText = await waitFor(() => screen.getByText("Page Not Found"));
+    expect(errorText).toBeInTheDocument();
   });
 });
