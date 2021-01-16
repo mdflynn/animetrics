@@ -107,7 +107,7 @@ describe("App integration", () => {
       );
     });
 
-    const season1 = screen.getByRole("link", { name: /season 1/i });
+    const season1 = screen.getByRole('link', { name: /season\-one\-navigation/i });
     userEvent.click(season1);
 
     const seasonTitle = await waitFor(() => screen.getByText("Season 1"));
@@ -123,7 +123,7 @@ describe("App integration", () => {
       );
     });
 
-    const season1 = screen.getByRole("link", { name: /season 1/i });
+    const season1 = screen.getByRole('link', { name: /season\-one\-navigation/i });
     userEvent.click(season1);
 
     const externalLink = await waitFor(() => screen.getByTestId("2"));
@@ -142,7 +142,7 @@ describe("App integration", () => {
       );
     });
 
-    const season1 = screen.getByRole("link", { name: /season 1/i });
+    const season1 = screen.getByRole('link', { name: /season\-one\-navigation/i });
     userEvent.click(season1);
 
     const titleButton = await waitFor(() =>
@@ -152,7 +152,7 @@ describe("App integration", () => {
     );
     userEvent.click(titleButton);
 
-    const seasonCard = screen.getByRole("link", { name: /season 3/i });
+    const seasonCard = screen.getByRole('link', { name: /season\-three\-navigation/i });
     expect(seasonCard).toBeInTheDocument();
 
     const seasonDetails = screen.queryByText("Izuku Midoriya: Origin");
@@ -214,7 +214,7 @@ describe("App integration", () => {
     });
     userEvent.click(titleButton);
 
-    expect(screen.getByRole("link", { name: /season 1/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /season\-one\-navigation/i })).toBeInTheDocument();
     expect(movieTitle).not.toBeInTheDocument();
   });
 });
