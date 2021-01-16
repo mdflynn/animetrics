@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { fetchSeasons } from "../../API/apiCalls";
 import { useParams, Redirect } from "react-router-dom";
 import EpisodeThumb from "../EpisodeThumb/EpisodeThumb";
+import { cleanEpisodeData, formatTitle } from "../../utilities";
 
 const EpisodeDisplay = () => {
   let { season } = useParams();
@@ -34,30 +35,10 @@ const EpisodeDisplay = () => {
     getSeasons();
   }, [getSeasons]);
 
-  const cleanEpisodeData = (rawData) => {
-    return rawData.episodes.map(data => {
-      return {
-        title: data.title,
-        aired: data.aired,
-        video_url: data.video_url,
-        episode_id: data.episode_id
-      }
-    })
-  }
-
   const generateEpisodeThumbs = () => {
     return episodes.map((episode) => {
       return <EpisodeThumb key={episode.episode_id} data={episode} />;
     });
-  };
-
-  const formatTitle = () => {
-    const capFirstLetter = season.charAt(0).toUpperCase() + season.slice(1);
-    const date =
-      capFirstLetter.slice(0, 6) +
-      " " +
-      capFirstLetter.slice(capFirstLetter.length - 1);
-    return date;
   };
 
   const generateLoadingContent = () => {
@@ -72,7 +53,7 @@ const EpisodeDisplay = () => {
 
   return (
     <>
-      <h1 className="season-title">{formatTitle()}</h1>
+      <h1 className="season-title">{formatTitle(season)}</h1>
       <div className="thumb-container">
         {generateLoadingContent()}
       </div>
