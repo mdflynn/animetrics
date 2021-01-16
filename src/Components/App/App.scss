@@ -1,3 +1,5 @@
+@import "../../mixins";
+
 @font-face {
   font-family: "Badaboom";
   src: url("../../assets/BADABB__.TTF") format(("truetype"));
@@ -8,14 +10,12 @@ body {
   height: 100%;
   margin: 0;
   font-family: Badaboom;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  @include text-borders(1px, black);
 }
 
 .title-link {
   text-decoration: none;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: blue;
+  @include text-borders(1px, blue);
 }
 
 .title {
@@ -23,20 +23,17 @@ body {
   transition: all .2s ease-in-out;
   .title-span {
     font-size: 80px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: red;
+    @include text-borders(1px, red);
   }
 }
 
 .title:hover { 
   transform: scale(1.1); 
-  
 }
 
 .sub-title {
   color: red;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  @include text-borders(1px, black);
 }
 
 body {
