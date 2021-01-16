@@ -39,12 +39,17 @@ const EpisodeDisplay = () => {
 
   const generateEpisodeThumbs = () => {
     return episodes.map((episode, index) => {
-      return <EpisodeThumb key={episode.episode_id} data={{...episode, id:index + 1}} />;
+      return (
+        <EpisodeThumb
+          key={episode.episode_id}
+          data={{ ...episode, id: index + 1 }}
+        />
+      );
     });
   };
 
   const generateLoadingContent = () => {
-    if (episodes === undefined) {
+    if (!episodes) {
       return <Redirect to="/error" />;
     } else if (episodes.length > 0) {
       return generateEpisodeThumbs();
@@ -53,9 +58,16 @@ const EpisodeDisplay = () => {
     }
   };
 
+  const generateSeasonFive = () => {
+    const content = generateLoadingContent();
+    const comingSoon = <p className="coming-soon">Coming Soon...<br />March 27th, 2021</p>;
+    const decideSeason = season === "season5" ? comingSoon : content;
+    return decideSeason;
+  };
+
   const title = formatTitle(season);
 
-  const loadContent = generateLoadingContent()
+  const loadContent = generateSeasonFive();
 
   return (
     <>
