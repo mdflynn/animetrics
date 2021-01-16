@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { fetchSeasons } from "../../API/apiCalls";
 import { useParams, Redirect } from "react-router-dom";
 import EpisodeThumb from "../EpisodeThumb/EpisodeThumb";
+import { cleanEpisodeData, formatTitle } from "../../utilities";
 
 const EpisodeDisplay = () => {
   let { season } = useParams();
@@ -25,7 +26,8 @@ const EpisodeDisplay = () => {
   const [episodes, setEpisodes] = useState([]);
   const getSeasons = useCallback(() => {
     fetchSeasons(determineFetch(season)).then((data) => {
-      setEpisodes(data.episodes);
+      const clean = cleanEpisodeData(data);
+      setEpisodes(clean);
     });
   }, [season]);
 
@@ -39,31 +41,20 @@ const EpisodeDisplay = () => {
     });
   };
 
-  const formatTitle = () => {
-    const capFirstLetter = season.charAt(0).toUpperCase() + season.slice(1);
-    const date =
-      capFirstLetter.slice(0, 6) +
-      " " +
-      capFirstLetter.slice(capFirstLetter.length - 1);
-    return date;
-  };
-
   const generateLoadingContent = () => {
     if (episodes === undefined) {
       return <Redirect to="/error" />;
     } else if (episodes.length > 0) {
       return generateEpisodeThumbs();
-    }  else {
+    } else {
       return <h1>Loading...</h1>;
     }
-  }
+  };
 
   return (
     <>
-      <h1 className="season-title">{formatTitle()}</h1>
-      <div className="thumb-container">
-        {generateLoadingContent()}
-      </div>
+      <h1 className="season-title">{formatTitle(season)}</h1>
+      <div className="thumb-container">{generateLoadingContent()}</div>
     </>
   );
 };

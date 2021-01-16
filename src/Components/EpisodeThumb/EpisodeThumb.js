@@ -1,19 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./EpisodeThumb.scss";
+import { formatDate } from "../../utilities";
 
 const EpisodeThumb = (props) => {
   const { title, aired, video_url, episode_id } = props.data;
-
-  const formatDate = (dateInfo) => {
-    if (!dateInfo) {
-      return `Missing Data`;
-    }
-    const isolateDate = dateInfo.substr(0, 10);
-    const splitDate = isolateDate.split("-");
-    const date = `${splitDate[1]}/${splitDate[2]}/${splitDate[0]}`;
-    return date;
-  };
 
   return (
     <article className="episode-thumb">
@@ -39,5 +30,5 @@ EpisodeThumb.propTypes = {
   title: PropTypes.string,
   aired: PropTypes.string,
   video_url: PropTypes.string,
-  episode_id: PropTypes.number
+  episode_id: PropTypes.number,
 };
