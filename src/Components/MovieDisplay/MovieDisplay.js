@@ -8,14 +8,14 @@ const MovieDisplay = () => {
 
   useEffect(() => {
     fetchMovies().then((data) => {
-      const filterData = filteredResults(data);
-      const clean = cleanData(filterData);
+      const filterData = filterMovieResults(data);
+      const clean = cleanMovieData(filterData);
       setMovies(clean);
     });
   }, []);
 
-  const filteredResults = (unfilteredData) => {
-    return unfilteredData.results.filter((result) => {
+  const filterMovieResults = (rawData) => {
+    return rawData.results.filter((result) => {
       return (
         result.type === "Movie" &&
         result.title.includes("Boku") &&
@@ -24,7 +24,7 @@ const MovieDisplay = () => {
     });
   };
 
-  const cleanData = (dirtyData) => {
+  const cleanMovieData = (dirtyData) => {
     return dirtyData.map((data) => {
       return {
         image_url: data.image_url,
