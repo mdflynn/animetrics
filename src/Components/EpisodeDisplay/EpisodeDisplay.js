@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { fetchSeasons } from "../../API/apiCalls";
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import EpisodeThumb from "../EpisodeThumb/EpisodeThumb";
 
 const EpisodeDisplay = () => {
@@ -23,7 +23,6 @@ const EpisodeDisplay = () => {
   };
 
   const [episodes, setEpisodes] = useState([]);
-
   const getSeasons = useCallback(() => {
     fetchSeasons(determineFetch(season)).then((data) => {
       setEpisodes(data.episodes);
@@ -49,11 +48,21 @@ const EpisodeDisplay = () => {
     return date;
   };
 
+  const generateLoadingContent = () => {
+    if (episodes === undefined) {
+      return <Redirect to="/error" />;
+    } else if (episodes.length > 0) {
+      return generateEpisodeThumbs();
+    }  else {
+      return <h1>Loading...</h1>;
+    }
+  }
+
   return (
     <>
       <h1 className="season-title">{formatTitle()}</h1>
       <div className="thumb-container">
-        {episodes.length > 0 && generateEpisodeThumbs()}
+        {generateLoadingContent()}
       </div>
     </>
   );
