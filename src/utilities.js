@@ -48,7 +48,7 @@ export const formatTitle = (title) => {
 
 export const formatDate = (dateInfo) => {
   if (!dateInfo) {
-    return `Missing Data`;
+    return `Missing Date`;
   }
   const isolateDate = dateInfo.substr(0, 10);
   const splitDate = isolateDate.split("-");

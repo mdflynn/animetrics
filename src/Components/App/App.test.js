@@ -107,10 +107,12 @@ describe("App integration", () => {
       );
     });
 
-    const season1 = screen.getByRole('link', { name: /season\-one\-navigation/i });
+    const season1 = screen.getByRole("link", {
+      name: /season\-three\-navigation/i,
+    });
     userEvent.click(season1);
 
-    const seasonTitle = await waitFor(() => screen.getByText("Season 1"));
+    const seasonTitle = await waitFor(() => screen.getByText("Season 3"));
     expect(seasonTitle).toBeInTheDocument();
   });
 
@@ -123,8 +125,10 @@ describe("App integration", () => {
       );
     });
 
-    const season1 = screen.getByRole('link', { name: /season\-one\-navigation/i });
-    userEvent.click(season1);
+    const season = screen.getByRole("link", {
+      name: /season\-one\-navigation/i,
+    });
+    userEvent.click(season);
 
     const externalLink = await waitFor(() => screen.getByTestId("2"));
     expect(externalLink.closest("a")).toHaveAttribute(
@@ -142,8 +146,10 @@ describe("App integration", () => {
       );
     });
 
-    const season1 = screen.getByRole('link', { name: /season\-one\-navigation/i });
-    userEvent.click(season1);
+    const season = screen.getByRole("link", {
+      name: /season\-four\-navigation/i,
+    });
+    userEvent.click(season);
 
     const titleButton = await waitFor(() =>
       screen.getByRole("link", {
@@ -152,11 +158,30 @@ describe("App integration", () => {
     );
     userEvent.click(titleButton);
 
-    const seasonCard = screen.getByRole('link', { name: /season\-three\-navigation/i });
+    const seasonCard = screen.getByRole("link", {
+      name: /season\-three\-navigation/i,
+    });
     expect(seasonCard).toBeInTheDocument();
 
     const seasonDetails = screen.queryByText("Izuku Midoriya: Origin");
     expect(seasonDetails).not.toBeInTheDocument();
+  });
+
+  it("should show coming soon when viewing season 5", async () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    const season = screen.getByRole("link", {
+      name: /season\-five\-navigation/i,
+    });
+    userEvent.click(season);
+    
+    const comingSoon = await waitFor(() =>
+      screen.getByText("Coming Soon...March 27th, 2021")
+    );
+    expect(comingSoon).toBeInTheDocument();
   });
 
   //movies integration
@@ -214,7 +239,9 @@ describe("App integration", () => {
     });
     userEvent.click(titleButton);
 
-    expect(screen.getByRole('link', { name: /season\-one\-navigation/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /season\-one\-navigation/i })
+    ).toBeInTheDocument();
     expect(movieTitle).not.toBeInTheDocument();
   });
 });
