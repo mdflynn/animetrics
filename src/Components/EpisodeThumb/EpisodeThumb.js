@@ -18,7 +18,7 @@ const EpisodeThumb = (props) => {
         More Details...
       </a>
     );
-    const decideLink = !video_url ? <p className="nolink">No additional details </p> : externalSite;
+    const decideLink = !video_url ? <p className="nolink">No additional details</p> : externalSite;
     return decideLink;
   };
 
