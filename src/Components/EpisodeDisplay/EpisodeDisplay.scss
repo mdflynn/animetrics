@@ -1,7 +1,8 @@
+@import "../../mixins";
+
 .season-title {
     margin-left: 50px;
     font-size: 44px;
     color: yellow;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: red;
+    @include text-borders(1px, red);
 }

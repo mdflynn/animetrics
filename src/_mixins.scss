@@ -1,0 +1,4 @@
+@mixin text-borders($width, $color) {
+    -webkit-text-stroke-width: $width;
+    -webkit-text-stroke-color: $color;
+}

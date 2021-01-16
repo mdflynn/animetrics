@@ -1,3 +1,5 @@
+@import "../../mixins";
+
 div,
 main {
   height: 100%;
@@ -25,14 +27,12 @@ main {
   justify-content: center;
   align-items: center;
   color: white;
-  -webkit-text-stroke-width: 4px;
-  -webkit-text-stroke-color: blue;
+  @include text-borders(4px, blue);
   transform: rotate(-20deg);
 }
 
 .season-card:hover {
-  -webkit-text-stroke-width: 4px;
-  -webkit-text-stroke-color: red;
+  @include text-borders(4px, red);
   transform: rotate(0);
 }
 

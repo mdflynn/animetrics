@@ -1,3 +1,5 @@
+@import "../../mixins";
+
 .error {
   background: url("../../assets/404.jpg") center center fixed;
   background-size: cover;
@@ -9,6 +11,7 @@
   align-items: center;
   margin-top: -135px;
   p {
+    @include text-borders(2px, white);
     font-size: 68px;
   }
 }
