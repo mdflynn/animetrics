@@ -13,17 +13,18 @@
 }
 
 .episode-thumb {
-  height: 225px;
-  width: 275px;
+  height: 275px;
+  width: 300px;
   background: blanchedalmond;
-  border: 5px solid black;
+  border: 10px solid black;
+  border-radius: 5%;
   margin: 15px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   h1 {
-    font-size: 34px;
+    font-size: 38px;
     color: red;
     text-align: center;
   }
@@ -41,4 +42,11 @@
 
 .episode-id {
   margin: 0;
+}
+
+.nolink {
+  margin: 0;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: blue;
 }
