@@ -5,8 +5,8 @@ import userEvent from "@testing-library/user-event";
 import { act } from "react-dom/test-utils";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
-import { fetchSeasons, fetchMovies } from "../../APIcalls";
-jest.mock("../../APIcalls");
+import { fetchSeasons, fetchMovies } from "../../API/apiCalls";
+jest.mock("../../API/apiCalls");
 
 describe("App", () => {
   it("should render the App", () => {

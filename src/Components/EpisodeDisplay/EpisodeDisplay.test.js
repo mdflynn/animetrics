@@ -1,13 +1,12 @@
 import React from "react";
 import EpisodeDisplay from "./EpisodeDisplay";
 import { screen, render, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
 import { act } from "react-dom/test-utils";
-import { fetchSeasons } from "../../APIcalls";
+import { fetchSeasons } from "../../API/apiCalls";
 
-jest.mock("../../APIcalls");
+jest.mock("../../API/apiCalls");
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useParams: () => ({
