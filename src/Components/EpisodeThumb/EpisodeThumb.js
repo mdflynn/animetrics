@@ -30,5 +30,5 @@ EpisodeThumb.propTypes = {
   title: PropTypes.string,
   aired: PropTypes.string,
   video_url: PropTypes.string,
-  episode_id: PropTypes.number
+  episode_id: PropTypes.number,
 };

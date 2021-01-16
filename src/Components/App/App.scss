@@ -1,9 +1,10 @@
 @font-face {
-  font-family: 'Badaboom';
-  src: url('../../assets/BADABB__.TTF') format(('truetype'))
+  font-family: "Badaboom";
+  src: url("../../assets/BADABB__.TTF") format(("truetype"));
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   font-family: Badaboom;
@@ -24,13 +25,13 @@ html, body {
 body {
   background: 
     url("../../assets/allmight.jpeg"),
-    url("../../assets/groupshot.jpeg"),
+    url("../../assets/groupshot.jpeg"), 
     url("../../assets/battle.jpeg"),
-    url("../../assets/dekuPunk.png"),
+    url("../../assets/dekuPunk.png"), 
     url("../../assets/endeavor.jpeg"),
-    url("../../assets/group2.jpeg"),
+    url("../../assets/group2.jpeg"), 
     url("../../assets/hug.jpeg"),
-    url("../../assets/allmightback.jpeg"),
+    url("../../assets/allmightback.jpeg"), 
     url("../../assets/deku.png"),
     url("../../assets/allmightRaiseFist.jpeg"),
     url("../../assets/allmight.jpeg");
@@ -64,13 +65,15 @@ body {
     background: url("../../assets/hug.jpeg") no-repeat center center fixed;
   }
   70% {
-    background: url("../../assets/allmightback.jpeg") no-repeat center center fixed;
+    background: url("../../assets/allmightback.jpeg") no-repeat center center
+      fixed;
   }
   80% {
     background: url("../../assets/deku.png") no-repeat center center fixed;
   }
   90% {
-    background: url("../../assets/allmightRaiseFist.jpeg") no-repeat center center fixed;
+    background: url("../../assets/allmightRaiseFist.jpeg") no-repeat center
+      center fixed;
   }
   100% {
     background: url("../../assets/allmight.jpeg") no-repeat center center fixed;

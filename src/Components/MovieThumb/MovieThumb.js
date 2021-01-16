@@ -3,8 +3,15 @@ import PropTypes from "prop-types";
 import "./MovieThumb.scss";
 
 const MovieThumb = (props) => {
-
-  const { image_url, rated, start_date, synopsis, url , title, mal_id} = props.data;
+  const {
+    image_url,
+    rated,
+    start_date,
+    synopsis,
+    url,
+    title,
+    mal_id,
+  } = props.data;
 
   const formatDate = (dateInfo) => {
     const isolateDate = dateInfo.substr(0, 10);
@@ -18,21 +25,21 @@ const MovieThumb = (props) => {
       <img src={image_url} alt="movie poster" />
       <div className="movie-info">
         <p className="movie-title">{title}</p>
-        <p className="movie-syn"> 
+        <p className="movie-syn">
           Synopsis: <br />
           {synopsis}
         </p>
         <p className="rated">Rated {rated}</p>
         <p className="air-date">Premiered on {formatDate(start_date)}</p>
         <a
-        className="external-link"
-        href={url}
-        target="_blank"
-        rel="noreferrer"
-        data-testid={mal_id}
-      >
-        More Details...
-      </a>
+          className="external-link"
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          data-testid={mal_id}
+        >
+          More Details...
+        </a>
       </div>
     </article>
   );
@@ -46,5 +53,5 @@ MovieThumb.propTypes = {
   start_date: PropTypes.string,
   synopsis: PropTypes.string,
   url: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
 };

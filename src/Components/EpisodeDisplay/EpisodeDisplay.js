@@ -26,7 +26,7 @@ const EpisodeDisplay = () => {
   const [episodes, setEpisodes] = useState([]);
   const getSeasons = useCallback(() => {
     fetchSeasons(determineFetch(season)).then((data) => {
-      const clean = cleanEpisodeData(data)
+      const clean = cleanEpisodeData(data);
       setEpisodes(clean);
     });
   }, [season]);
@@ -46,17 +46,15 @@ const EpisodeDisplay = () => {
       return <Redirect to="/error" />;
     } else if (episodes.length > 0) {
       return generateEpisodeThumbs();
-    }  else {
+    } else {
       return <h1>Loading...</h1>;
     }
-  }
+  };
 
   return (
     <>
       <h1 className="season-title">{formatTitle(season)}</h1>
-      <div className="thumb-container">
-        {generateLoadingContent()}
-      </div>
+      <div className="thumb-container">{generateLoadingContent()}</div>
     </>
   );
 };
