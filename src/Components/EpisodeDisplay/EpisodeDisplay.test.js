@@ -1,9 +1,8 @@
 import React from "react";
 import EpisodeDisplay from "./EpisodeDisplay";
-import { screen, render, waitFor, queryByText } from "@testing-library/react";
+import { screen, render, waitFor, act } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
-import { act } from "react-dom/test-utils";
 import { fetchSeasons } from "../../API/apiCalls";
 import App from "../App/App";
 import userEvent from "@testing-library/user-event";
