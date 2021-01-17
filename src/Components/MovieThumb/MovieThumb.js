@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./MovieThumb.scss";
+import { formatDate } from "../../utilities";
 
 const MovieThumb = (props) => {
   const {
@@ -13,12 +14,7 @@ const MovieThumb = (props) => {
     mal_id,
   } = props.data;
 
-  const formatDate = (dateInfo) => {
-    const isolateDate = dateInfo.substr(0, 10);
-    const splitDate = isolateDate.split("-");
-    const date = `${splitDate[1]}/${splitDate[2]}/${splitDate[0]}`;
-    return date;
-  };
+  const date = formatDate(start_date);
 
   return (
     <article className="movie-wrapper">
@@ -26,11 +22,11 @@ const MovieThumb = (props) => {
       <div className="movie-info">
         <p className="movie-title">{title}</p>
         <p className="movie-syn">
-          Synopsis: <br />
+          <span className="syn">Synopsis: </span><br />
           {synopsis}
         </p>
         <p className="rated">Rated {rated}</p>
-        <p className="air-date">Premiered on {formatDate(start_date)}</p>
+        <p className="air-date">Premiered on {date}</p>
         <a
           className="external-link"
           href={url}

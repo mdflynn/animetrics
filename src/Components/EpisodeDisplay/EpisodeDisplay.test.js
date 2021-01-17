@@ -78,7 +78,7 @@ describe("EpisodeDisplay", () => {
         <EpisodeDisplay />
       </MemoryRouter>
     );
-    const date = await waitFor(() => screen.getByText("Aired on: 04/03/2016"));
+    const date = await waitFor(() => screen.getByText("04/03/2016"));
     expect(date).toBeInTheDocument();
   });
 
@@ -88,7 +88,7 @@ describe("EpisodeDisplay", () => {
         <EpisodeDisplay />
       </MemoryRouter>
     );
-    const link = await waitFor(() => screen.getByText("Aired on: 04/03/2016"));
+    const link = await waitFor(() => screen.getByText("04/03/2016"));
     expect(link).toBeInTheDocument();
   });
 
@@ -102,6 +102,19 @@ describe("EpisodeDisplay", () => {
     });
     const seasonTitle = screen.getByText("Season 2");
     expect(seasonTitle).toBeInTheDocument();
+  });
+
+  it("should show 'loading' while doing fetch'", async () => {
+    episodeDetails.episodes = [];
+    await act(async () => {
+      render(
+        <MemoryRouter>
+          <EpisodeDisplay />
+        </MemoryRouter>
+      );
+    });
+    const loading = screen.getByText("Loading...");
+    expect(loading).toBeInTheDocument();
   });
 
   it("should render an error page if no episode data", async () => {

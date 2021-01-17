@@ -14,6 +14,14 @@ jest.mock("react-router-dom", () => ({
   }),
 }));
 
+// describe("API Calls", () => {
+//   it("should call the API on EpisodeDisplay render", () => {
+//     const renderEpisode = (<EpisodeDisplay />)
+//     jest.spyOn(renderEpisode.instance(), fetchSeasons);
+//     expect(spy).toHaveBeenCalled();
+//   })
+// })
+
 // describe("API calls", () => {
 //   it("should call fetchSeasons", () => {
 //     const mockFetch = API.fetchSeasons("31964");

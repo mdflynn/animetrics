@@ -18,4 +18,18 @@
 .movie-info {
   @include flex-column;
   justify-content: space-around;
+  .movie-title {
+    color: blue;
+    @include text-borders(1px, red);
+  }
+  .syn {
+    color: black;
+  }
+  .rated {
+    color: blue;
+    @include text-borders(1px, black);
+  }
+  .external-link {
+    color: red;
+  }
 }

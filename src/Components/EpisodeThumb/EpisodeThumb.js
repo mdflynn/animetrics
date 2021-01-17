@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import "./EpisodeThumb.scss";
 import { formatDate } from "../../utilities";
 
-const EpisodeThumb = (props) => {
-  const { title, aired, video_url, episode_id, id } = props.data;
+const EpisodeThumb = ({ data }) => {
+  const { title, aired, video_url, episode_id, id } = data;
 
   const generateLink = () => {
     const externalSite = (
@@ -30,7 +30,7 @@ const EpisodeThumb = (props) => {
     <article className="episode-thumb">
       <p className="episode-id">Episode #{id}</p>
       <h1>{title}</h1>
-      <p>Aired on: {date}</p>
+      <p className="air-date"><span>Aired on:</span> {date}</p>
       {loadLinks}
     </article>
   );
