@@ -1,8 +1,7 @@
 import React from "react";
 import App from "./App";
-import { screen, render, waitFor } from "@testing-library/react";
+import { screen, render, waitFor, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { act } from "react-dom/test-utils";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
 import { fetchSeasons, fetchMovies } from "../../API/apiCalls";
@@ -177,7 +176,7 @@ describe("App integration", () => {
       name: /season\-five\-navigation/i,
     });
     userEvent.click(season);
-    
+
     const comingSoon = await waitFor(() =>
       screen.getByText("Coming Soon...March 27th, 2021")
     );
