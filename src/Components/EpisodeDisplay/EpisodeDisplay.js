@@ -27,10 +27,16 @@ const EpisodeDisplay = () => {
   const [episodes, setEpisodes] = useState([]);
 
   const getSeasons = useCallback(() => {
+    let mounted = true;
     fetchSeasons(determineFetch(season)).then((data) => {
-      const clean = cleanEpisodeData(data);
-      setEpisodes(clean);
+      if (mounted) {
+        const clean = cleanEpisodeData(data);
+        setEpisodes(clean);
+      }
     });
+    return function cleanup() {
+      mounted = false;
+    };
   }, [season]);
 
   useEffect(() => {
@@ -54,13 +60,19 @@ const EpisodeDisplay = () => {
     } else if (episodes.length > 0) {
       return generateEpisodeThumbs();
     } else {
-      return <h1>Loading...</h1>;
+      return <h1 className="loading-screen">Loading...</h1>;
     }
   };
 
   const generateSeasonFive = () => {
     const content = generateLoadingContent();
-    const comingSoon = <p className="coming-soon">Coming Soon...<br />March 27th, 2021</p>;
+    const comingSoon = (
+      <p className="coming-soon">
+        Coming Soon...
+        <br />
+        March 27th, 2021
+      </p>
+    );
     const decideSeason = season === "season5" ? comingSoon : content;
     return decideSeason;
   };
