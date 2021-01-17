@@ -30,7 +30,7 @@ const EpisodeThumb = (props) => {
     <article className="episode-thumb">
       <p className="episode-id">Episode #{id}</p>
       <h1>{title}</h1>
-      <p>Aired on: {date}</p>
+      <p className="air-date"><span>Aired on:</span> {date}</p>
       {loadLinks}
     </article>
   );
