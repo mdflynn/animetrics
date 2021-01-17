@@ -1,7 +1,6 @@
 import React from "react";
 import MovieThumb from "./MovieThumb";
 import { screen, render } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
 

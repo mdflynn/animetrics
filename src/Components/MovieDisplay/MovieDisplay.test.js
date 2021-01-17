@@ -1,7 +1,6 @@
 import React from "react";
 import MovieDisplay from "./MovieDisplay";
-import { screen, render, waitFor } from "@testing-library/react";
-import { act } from "react-dom/test-utils";
+import { screen, render, waitFor, act } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
 import { fetchMovies } from "../../API/apiCalls";
