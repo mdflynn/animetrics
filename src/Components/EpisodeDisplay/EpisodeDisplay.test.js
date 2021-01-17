@@ -104,6 +104,19 @@ describe("EpisodeDisplay", () => {
     expect(seasonTitle).toBeInTheDocument();
   });
 
+  it("should show 'loading' while doing fetch'", async () => {
+    episodeDetails.episodes = [];
+    await act(async () => {
+      render(
+        <MemoryRouter>
+          <EpisodeDisplay />
+        </MemoryRouter>
+      );
+    });
+    const loading = screen.getByText("Loading...");
+    expect(loading).toBeInTheDocument();
+  });
+
   it("should render an error page if no episode data", async () => {
     episodeDetails.episodes = null;
     render(
