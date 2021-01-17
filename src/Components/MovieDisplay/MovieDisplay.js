@@ -21,7 +21,9 @@ const MovieDisplay = () => {
     });
   };
 
-  return <section className="movie-section">{generateMovieThumbs()}</section>;
+  const display = generateMovieThumbs();
+
+  return <section className="movie-section">{display}</section>;
 };
 
 export default MovieDisplay;
