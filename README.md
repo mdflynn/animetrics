@@ -1,4 +1,4 @@
-#ANIMEtrics - Mod 3 Final Solo Project
+# ANIMEtrics - Mod 3 Final Solo Project
 ---
 ## Overview
 A anime review app that shows all the information about the show, My Hero Academia.
