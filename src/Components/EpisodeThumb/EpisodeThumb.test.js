@@ -35,7 +35,7 @@ describe("EpisodeThumb", () => {
         <EpisodeThumb data={episodeData} />
       </MemoryRouter>
     );
-    const date = screen.getByText("Aired on: 08/03/2018");
+    const date = screen.getByText("08/03/2018");
     expect(date).toBeInTheDocument();
   });
 
@@ -75,7 +75,7 @@ describe("EpisodeThumb", () => {
         <EpisodeThumb data={episodeData} />
       </MemoryRouter>
     );
-    const noDate = screen.getByText("Aired on: Missing Date");
+    const noDate = screen.getByText("Missing Date");
     expect(noDate).toBeInTheDocument();
   })
 });

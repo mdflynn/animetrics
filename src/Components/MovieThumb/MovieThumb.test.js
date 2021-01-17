@@ -46,7 +46,7 @@ describe("MovieThumb", () => {
       </MemoryRouter>
     );
 
-    const image = screen.getByText("Synopsis: Great movie");
+    const image = screen.getByText("Great movie");
     expect(image).toBeInTheDocument();
   });
 });

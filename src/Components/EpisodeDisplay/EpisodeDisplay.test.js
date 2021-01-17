@@ -78,7 +78,7 @@ describe("EpisodeDisplay", () => {
         <EpisodeDisplay />
       </MemoryRouter>
     );
-    const date = await waitFor(() => screen.getByText("Aired on: 04/03/2016"));
+    const date = await waitFor(() => screen.getByText("04/03/2016"));
     expect(date).toBeInTheDocument();
   });
 
@@ -88,7 +88,7 @@ describe("EpisodeDisplay", () => {
         <EpisodeDisplay />
       </MemoryRouter>
     );
-    const link = await waitFor(() => screen.getByText("Aired on: 04/03/2016"));
+    const link = await waitFor(() => screen.getByText("04/03/2016"));
     expect(link).toBeInTheDocument();
   });
 
