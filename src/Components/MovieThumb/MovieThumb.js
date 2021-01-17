@@ -22,7 +22,8 @@ const MovieThumb = (props) => {
       <div className="movie-info">
         <p className="movie-title">{title}</p>
         <p className="movie-syn">
-          <span className="syn">Synopsis: </span><br />
+          <span className="syn">Synopsis: </span>
+          <br />
           {synopsis}
         </p>
         <p className="rated">Rated {rated}</p>
@@ -50,4 +51,5 @@ MovieThumb.propTypes = {
   synopsis: PropTypes.string,
   url: PropTypes.string,
   title: PropTypes.string,
+  mal_id: PropTypes.number,
 };
