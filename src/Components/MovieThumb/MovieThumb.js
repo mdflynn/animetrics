@@ -22,7 +22,7 @@ const MovieThumb = (props) => {
       <div className="movie-info">
         <p className="movie-title">{title}</p>
         <p className="movie-syn">
-          Synopsis: <br />
+          <span className="syn">Synopsis: </span><br />
           {synopsis}
         </p>
         <p className="rated">Rated {rated}</p>
