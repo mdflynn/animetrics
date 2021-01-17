@@ -38,7 +38,7 @@
     font-size: 24px;
     span {
       color: rgb(43, 131, 214);
-      @include text-borders(0, none)
+      @include text-borders(0, none);
     }
   }
 }
@@ -48,7 +48,6 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-
 
 .nolink {
   margin: 0;
