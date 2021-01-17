@@ -1,7 +1,6 @@
 import React from "react";
 import EpisodeThumb from "./EpisodeThumb";
 import { screen, render } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
 
@@ -15,7 +14,7 @@ describe("EpisodeThumb", () => {
       aired: "2018-08-03T00:00:00+00:00",
       title: "Sweet 1st episode",
       episode_id: 1,
-      id: 1
+      id: 1,
     };
   });
 
@@ -67,7 +66,7 @@ describe("EpisodeThumb", () => {
     );
     const noDetails = screen.getByText("No additional details");
     expect(noDetails).toBeInTheDocument();
-  })
+  });
   it("should render missing data if not date", () => {
     episodeData.aired = null;
     render(
@@ -77,5 +76,5 @@ describe("EpisodeThumb", () => {
     );
     const noDate = screen.getByText("Missing Date");
     expect(noDate).toBeInTheDocument();
-  })
+  });
 });
