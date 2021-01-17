@@ -1,7 +1,6 @@
 import React from "react";
 import MainPage from "./MainPage";
 import { screen, render } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
 
@@ -12,7 +11,9 @@ describe("MainPage", () => {
         <MainPage />
       </MemoryRouter>
     );
-    const seasonButton = screen.getByRole('link', { name: /season\-one\-navigation/i });
+    const seasonButton = screen.getByRole("link", {
+      name: /season\-one\-navigation/i,
+    });
     expect(seasonButton).toBeInTheDocument();
   });
   it("should render the Season 2 link", () => {
@@ -21,7 +22,9 @@ describe("MainPage", () => {
         <MainPage />
       </MemoryRouter>
     );
-    const seasonButton = screen.getByRole('link', { name: /season\-two\-navigation/i });
+    const seasonButton = screen.getByRole("link", {
+      name: /season\-two\-navigation/i,
+    });
     expect(seasonButton).toBeInTheDocument();
   });
   it("should render the Season 3 link", () => {
@@ -30,7 +33,9 @@ describe("MainPage", () => {
         <MainPage />
       </MemoryRouter>
     );
-    const seasonButton = screen.getByRole('link', { name: /season\-three\-navigation/i });
+    const seasonButton = screen.getByRole("link", {
+      name: /season\-three\-navigation/i,
+    });
     expect(seasonButton).toBeInTheDocument();
   });
   it("should render the Season 4 link", () => {
@@ -39,7 +44,9 @@ describe("MainPage", () => {
         <MainPage />
       </MemoryRouter>
     );
-    const seasonButton = screen.getByRole('link', { name: /season\-four\-navigation/i });
+    const seasonButton = screen.getByRole("link", {
+      name: /season\-four\-navigation/i,
+    });
     expect(seasonButton).toBeInTheDocument();
   });
   it("should render the Season 5 link", () => {
@@ -48,7 +55,9 @@ describe("MainPage", () => {
         <MainPage />
       </MemoryRouter>
     );
-    const seasonButton = screen.getByRole('link', { name: /season\-five\-navigation/i });
+    const seasonButton = screen.getByRole("link", {
+      name: /season\-five\-navigation/i,
+    });
     expect(seasonButton).toBeInTheDocument();
   });
   it("should render the Movies link", () => {
@@ -57,7 +66,9 @@ describe("MainPage", () => {
         <MainPage />
       </MemoryRouter>
     );
-    const movieButton = screen.getByRole('link', { name: /movies\-navigation/i });
+    const movieButton = screen.getByRole("link", {
+      name: /movies\-navigation/i,
+    });
     expect(movieButton).toBeInTheDocument();
   });
 });
