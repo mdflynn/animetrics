@@ -3,7 +3,7 @@
 ## Overview
 A anime review app that shows all the information about the show, My Hero Academia.
 
-[ANIMEtrics](https://mdflynn.github.io/animetrics/) - Check it out!
+Check it out! - [GitHub Pages](https://mdflynn.github.io/animetrics/) or [Heroku](https://animetrics.herokuapp.com/)
 
 ## Goals
 * Demonstrate a mastery in React, React Router, Asynchornous JavaScript.
