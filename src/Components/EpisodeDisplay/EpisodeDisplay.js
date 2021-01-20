@@ -5,8 +5,12 @@ import EpisodeThumb from "../EpisodeThumb/EpisodeThumb";
 import { cleanEpisodeData, formatTitle } from "../../utilities";
 import "./EpisodeDisplay.scss";
 
-const EpisodeDisplay = () => {
+const EpisodeDisplay = (props) => {
   let { season } = useParams();
+
+  const { favEpisodes, addFavoriteEpisode } = props;
+
+  const [episodes, setEpisodes] = useState([]);
 
   const determineFetch = (url) => {
     switch (url) {
@@ -24,8 +28,6 @@ const EpisodeDisplay = () => {
     }
   };
 
-  const [episodes, setEpisodes] = useState([]);
-
   const getSeasons = useCallback(() => {
     let mounted = true;
     fetchSeasons(determineFetch(season)).then((data) => {
@@ -40,7 +42,9 @@ const EpisodeDisplay = () => {
   }, [season]);
 
   useEffect(() => {
-    getSeasons();
+    if (season !== "favorites") {
+      getSeasons();
+    }
   }, [getSeasons]);
 
   const generateEpisodeThumbs = () => {
@@ -49,6 +53,8 @@ const EpisodeDisplay = () => {
         <EpisodeThumb
           key={episode.episode_id}
           data={{ ...episode, id: index + 1 }}
+          addFavoriteEpisode={addFavoriteEpisode}
+          favEpisodes={favEpisodes}
         />
       );
     });
@@ -79,7 +85,20 @@ const EpisodeDisplay = () => {
 
   const title = formatTitle(season);
 
-  const loadContent = generateSeasonFive();
+  const generateFavorites = () => {
+    return favEpisodes.map((episode, index) => {
+      return (
+        <EpisodeThumb
+          key={episode.episode_id}
+          data={{ ...episode, id: index + 1 }}
+          addFavoriteEpisode={addFavoriteEpisode}
+          favEpisodes={favEpisodes}
+        />
+      );
+    });
+  }
+
+  const loadContent = season === "favorites" ? generateFavorites() : generateSeasonFive(); // or params === favorites
 
   return (
     <>

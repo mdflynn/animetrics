@@ -37,6 +37,11 @@ const MainPage = () => {
             Movies
           </article>
         </Link>
+        <Link className="link" to="/favorites" aria-label="favorites-navigation">
+          <article className="season-card" data-value="favorites">
+            Favorites
+          </article>
+        </Link>
       </div>
     </div>
   );
