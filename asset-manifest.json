@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/animetrics/static/css/main.f1dec223.chunk.css",
-    "main.js": "/animetrics/static/js/main.2151d7e6.chunk.js",
-    "main.js.map": "/animetrics/static/js/main.2151d7e6.chunk.js.map",
+    "main.css": "/animetrics/static/css/main.c9c5fb12.chunk.css",
+    "main.js": "/animetrics/static/js/main.acb1a636.chunk.js",
+    "main.js.map": "/animetrics/static/js/main.acb1a636.chunk.js.map",
     "runtime-main.js": "/animetrics/static/js/runtime-main.f15412aa.js",
     "runtime-main.js.map": "/animetrics/static/js/runtime-main.f15412aa.js.map",
-    "static/js/2.04f54b56.chunk.js": "/animetrics/static/js/2.04f54b56.chunk.js",
-    "static/js/2.04f54b56.chunk.js.map": "/animetrics/static/js/2.04f54b56.chunk.js.map",
+    "static/js/2.d5b9621a.chunk.js": "/animetrics/static/js/2.d5b9621a.chunk.js",
+    "static/js/2.d5b9621a.chunk.js.map": "/animetrics/static/js/2.d5b9621a.chunk.js.map",
     "index.html": "/animetrics/index.html",
-    "static/css/main.f1dec223.chunk.css.map": "/animetrics/static/css/main.f1dec223.chunk.css.map",
-    "static/js/2.04f54b56.chunk.js.LICENSE.txt": "/animetrics/static/js/2.04f54b56.chunk.js.LICENSE.txt",
+    "static/css/main.c9c5fb12.chunk.css.map": "/animetrics/static/css/main.c9c5fb12.chunk.css.map",
+    "static/js/2.d5b9621a.chunk.js.LICENSE.txt": "/animetrics/static/js/2.d5b9621a.chunk.js.LICENSE.txt",
     "static/media/ErrorPage.scss": "/animetrics/static/media/404.909e7ed1.jpg",
     "static/media/App.scss": "/animetrics/static/media/hug.3098c412.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.f15412aa.js",
-    "static/js/2.04f54b56.chunk.js",
-    "static/css/main.f1dec223.chunk.css",
-    "static/js/main.2151d7e6.chunk.js"
+    "static/js/2.d5b9621a.chunk.js",
+    "static/css/main.c9c5fb12.chunk.css",
+    "static/js/main.acb1a636.chunk.js"
   ]
 }
