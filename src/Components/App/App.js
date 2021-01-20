@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MainPage from "../MainPage/MainPage";
 import "./App.scss";
 import { Route, Switch, Link } from "react-router-dom";
@@ -7,6 +7,20 @@ import MovieDisplay from "../MovieDisplay/MovieDisplay";
 import ErrorPage from "../ErrorPage/ErrorPage";
 
 const App = () => {
+  const [favEpisodes, setFavEpisodes] = useState([]);
+
+  const addFavoriteEpisode = (episode, isFavorite) => {
+    if (isFavorite) {
+      setFavEpisodes(
+        favEpisodes.filter(
+          (favEpisode) => favEpisode.episode_id !== episode.episode_id
+        )
+      );
+    } else {
+      setFavEpisodes([...favEpisodes, episode]);
+    }
+  };
+
   return (
     <>
       <Link className="title-link" to="/">
@@ -21,7 +35,17 @@ const App = () => {
         <Route exact path="/animetrics" component={MainPage} />
         <Route exact path="/movies" component={MovieDisplay} />
         <Route exact path="/error" component={ErrorPage} />
-        <Route path="/:season" component={EpisodeDisplay} />
+        <Route
+          path="/:season"
+          render={() => {
+            return (
+              <EpisodeDisplay
+                favEpisodes={favEpisodes}
+                addFavoriteEpisode={addFavoriteEpisode}
+              />
+            );
+          }}
+        />
       </Switch>
     </>
   );

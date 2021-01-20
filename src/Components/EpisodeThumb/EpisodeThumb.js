@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import "./EpisodeThumb.scss";
 import { formatDate } from "../../utilities";
 
-const EpisodeThumb = ({ data }) => {
-  const { title, aired, video_url, episode_id, id } = data;
+const EpisodeThumb = (props) => {
+  const { title, aired, video_url, episode_id, id } = props.data;
+
+  const { addFavoriteEpisode, favEpisodes } = props
 
   const generateLink = () => {
     const externalSite = (
@@ -26,9 +28,16 @@ const EpisodeThumb = ({ data }) => {
 
   const date = formatDate(aired);
 
+  const isFavorite = favEpisodes && favEpisodes.find(episode => episode.episode_id === episode_id)
+
   return (
     <article className="episode-thumb">
+      <div className="thumb-div">
       <p className="episode-id">Episode #{id}</p>
+      { isFavorite &&  '⭐️ '}
+      </div>
+      <button onClick={() => addFavoriteEpisode(props.data, isFavorite)}>{isFavorite ? "Un-" : null}Favorite</button>
+    
       <h1>{title}</h1>
       <p className="air-date"><span>Aired on:</span> {date}</p>
       {loadLinks}
