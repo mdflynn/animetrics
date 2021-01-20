@@ -45,7 +45,7 @@ const EpisodeDisplay = (props) => {
     if (season !== "favorites") {
       getSeasons();
     }
-  }, [getSeasons]);
+  }, [getSeasons, season]);
 
   const generateEpisodeThumbs = () => {
     return episodes.map((episode, index) => {
