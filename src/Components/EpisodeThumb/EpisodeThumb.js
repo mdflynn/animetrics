@@ -36,7 +36,7 @@ const EpisodeThumb = (props) => {
       <p className="episode-id">Episode #{id}</p>
       { isFavorite &&  '⭐️ '}
       </div>
-      <button onClick={() => addFavoriteEpisode(props.data, isFavorite)}>{isFavorite ? "Un-" : null}Favorite</button>
+      <button onClick={() => addFavoriteEpisode(props.data, isFavorite)}>{isFavorite && "Un-"}Favorite</button>
     
       <h1>{title}</h1>
       <p className="air-date"><span>Aired on:</span> {date}</p>
