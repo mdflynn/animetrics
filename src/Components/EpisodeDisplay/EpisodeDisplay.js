@@ -70,19 +70,6 @@ const EpisodeDisplay = (props) => {
     }
   };
 
-  const generateSeasonFive = () => {
-    const content = generateLoadingContent();
-    const comingSoon = (
-      <p className="coming-soon">
-        Coming Soon...
-        <br />
-        March 27th, 2021
-      </p>
-    );
-    const decideSeason = season === "season5" ? comingSoon : content;
-    return decideSeason;
-  };
-
   const title = formatTitle(season);
 
   const generateFavorites = () => {
@@ -98,7 +85,7 @@ const EpisodeDisplay = (props) => {
     });
   }
 
-  const loadContent = season === "favorites" ? generateFavorites() : generateSeasonFive(); // or params === favorites
+  const loadContent = season === "favorites" ? generateFavorites() : generateLoadingContent(); // or params === favorites
 
   return (
     <>
