@@ -166,23 +166,6 @@ describe("App integration", () => {
     expect(seasonDetails).not.toBeInTheDocument();
   });
 
-  it("should show coming soon when viewing season 5", async () => {
-    render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
-    );
-    const season = screen.getByRole("link", {
-      name: /season\-five\-navigation/i,
-    });
-    userEvent.click(season);
-
-    const comingSoon = await waitFor(() =>
-      screen.getByText("Coming Soon...March 27th, 2021")
-    );
-    expect(comingSoon).toBeInTheDocument();
-  });
-
   //movies integration
 
   it("should render the movies on click", async () => {
