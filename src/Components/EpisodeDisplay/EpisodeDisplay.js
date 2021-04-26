@@ -30,7 +30,8 @@ const EpisodeDisplay = (props) => {
 
   const getSeasons = useCallback(() => {
     let mounted = true;
-    fetchSeasons(determineFetch(season)).then((data) => {
+    const selectedSeason = determineFetch(season);
+    fetchSeasons(selectedSeason).then((data) => {
       if (mounted) {
         const clean = cleanEpisodeData(data);
         setEpisodes(clean);
@@ -83,9 +84,10 @@ const EpisodeDisplay = (props) => {
         />
       );
     });
-  }
+  };
 
-  const loadContent = season === "favorites" ? generateFavorites() : generateLoadingContent(); // or params === favorites
+  const loadContent =
+    season === "favorites" ? generateFavorites() : generateLoadingContent();
 
   return (
     <>
