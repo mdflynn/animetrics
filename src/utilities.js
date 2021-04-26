@@ -38,12 +38,16 @@ export const cleanMovieData = (dirtyData) => {
 };
 
 export const formatTitle = (title) => {
-  const capFirstLetter = title.charAt(0).toUpperCase() + title.slice(1);
-  const date =
-    capFirstLetter.slice(0, 6) +
-    " " +
-    capFirstLetter.slice(capFirstLetter.length - 1);
-  return date;
+  if (title === "favorites") {
+    return "Favorites";
+  } else {
+    const capFirstLetter = title.charAt(0).toUpperCase() + title.slice(1);
+    const date =
+      capFirstLetter.slice(0, 6) +
+      " " +
+      capFirstLetter.slice(capFirstLetter.length - 1);
+    return date;
+  }
 };
 
 export const formatDate = (dateInfo) => {
