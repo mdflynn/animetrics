@@ -30,7 +30,8 @@ const EpisodeDisplay = (props) => {
 
   const getSeasons = useCallback(() => {
     let mounted = true;
-    fetchSeasons(determineFetch(season)).then((data) => {
+    const selectedSeason = determineFetch(season);
+    fetchSeasons(selectedSeason).then((data) => {
       if (mounted) {
         const clean = cleanEpisodeData(data);
         setEpisodes(clean);
@@ -70,19 +71,6 @@ const EpisodeDisplay = (props) => {
     }
   };
 
-  const generateSeasonFive = () => {
-    const content = generateLoadingContent();
-    const comingSoon = (
-      <p className="coming-soon">
-        Coming Soon...
-        <br />
-        March 27th, 2021
-      </p>
-    );
-    const decideSeason = season === "season5" ? comingSoon : content;
-    return decideSeason;
-  };
-
   const title = formatTitle(season);
 
   const generateFavorites = () => {
@@ -96,9 +84,10 @@ const EpisodeDisplay = (props) => {
         />
       );
     });
-  }
+  };
 
-  const loadContent = season === "favorites" ? generateFavorites() : generateSeasonFive(); // or params === favorites
+  const loadContent =
+    season === "favorites" ? generateFavorites() : generateLoadingContent();
 
   return (
     <>

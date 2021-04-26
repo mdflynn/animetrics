@@ -19,6 +19,7 @@
     "coverage": "CI=true npm test -- --env=jsdom --coverage",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
+    "postinstall": "npm rebuild node-sass",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
